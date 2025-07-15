@@ -15,8 +15,8 @@ from obspy.clients.fdsn.mass_downloader import RectangularDomain, \
 import pandas as pd
 
 ## get_events
-StEvTime = UTCDateTime("2018-01-01")
-EndEvTime = UTCDateTime("2018-08-31")
+StEvTime = UTCDateTime("2018-01-01")  # example start time 
+EndEvTime = UTCDateTime("2018-08-31")  # example end time
 minlat = 56.0
 maxlat = 72.0
 minlon = -170.0
