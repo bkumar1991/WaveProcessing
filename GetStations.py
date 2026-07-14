@@ -18,8 +18,8 @@ import pandas as pd
 
 ## set up time and area for available stations
 
-stt = UTCDateTime("2018-01-01")
-edt = UTCDateTime("2018-08-31")
+stt = UTCDateTime("2018-01-01")        # Start time 
+edt = UTCDateTime("2018-08-31")        # End time
 minlat = 56.0
 maxlat = 72.0
 minlon = -170.0
