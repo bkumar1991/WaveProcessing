@@ -1,8 +1,7 @@
 import numpy as np
 from numpy.linalg import inv
-from scipy.optimize import minimize
-from numpy.linalg import inv
-from scipy.optimize import curve_fit
+# from scipy.optimize import minimize
+# from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 #from scipy.signal import savgol_filter
 from pathlib import Path
@@ -13,11 +12,11 @@ from obspy import read, Stream
 from scipy.signal import hilbert
 import numpy as np
 from scipy.optimize import minimize
-from sklearn.preprocessing import StandardScaler
-from collections import deque
+# from sklearn.preprocessing import StandardScaler
+# from collections import deque
 import obspy
 root_path = Path('D:/python codes/TestingFinalProcess')
-new_root_path = Path('D:/python codes/TFP0.0225') 
+new_root_path = Path('D:/python codes/TestProcessed07122026_1') 
 
 
 def calculate_envelope_peak(trace):
@@ -240,13 +239,14 @@ def save_plots_with_optimized_inversion(folder, save_path1, save_path2, save_pat
     plt.gca().invert_yaxis()
     plt.plot(trace_offsets_filtered, predicted_envelope_peak_time_filtered, 'k-',markersize=3.2, linewidth= 1.0, label= 'Predicted Peak Times ')
     plt.gca().invert_yaxis()
-    plt.scatter(trace_offsets[outlier_mask], peak_times[outlier_mask], color='red',s=10, label='Outliers', zorder=5)
+    plt.scatter(trace_offsets[outlier_mask], peak_times[outlier_mask], color='red',s=6, label='Outliers', zorder=5)
     plt.gca().invert_yaxis()
-    plt.xlabel('Epicentral Distance (Km)', fontsize=10)
-    plt.ylabel('Envelope Peak Time (s)', fontsize=10)
+    plt.xlabel('Epicentral Distance (Km)', fontsize=6)
+    plt.ylabel('Envelope Peak Time (s)', fontsize=6)
     # plt.title('Observed vs Predicted Envelope Peak Times', fontsize=10)
-    plt.legend(fontsize=8, loc="upper right", frameon= False)
-    plt.text(0.02, 1.065, '(a)',transform=plt.gca().transAxes, fontsize=10, va='top', ha='left')
+    # plt.legend(fontsize=8, loc="upper right", frameon= False)
+    # plt.text(0.02, 1.065, '(a)',transform=plt.gca().transAxes, fontsize=10, va='top', ha='left')
+    plt.tick_params(axis='both', which='major', labelsize=5)
     plt.tight_layout()
     plt.savefig(save_path6, format="pdf",dpi=300, bbox_inches='tight' )
     plt.close()
@@ -260,18 +260,18 @@ def save_plots_with_optimized_inversion(folder, save_path1, save_path2, save_pat
         st = read(file_path)
         trace = st[0]
         time = np.arange(0, trace.stats.npts / trace.stats.sampling_rate, trace.stats.delta)
-
-        trace.stats.distance = trace.stats.sac.gcarc * 110 *1000   # offset distances if available
-        trace_offset = trace.stats.distance /1e3  
+        trace.stats.distance = trace.stats.sac.gcarc * 110  
+        # trace.stats.distance = trace.stats.sac.gcarc * 110 *1000   # offset distances if available
+        # trace_offset = trace.stats.distance /1e3  
 
         
         all_st_1 += trace 
         
     all_st_1.plot(type='section', fig=fig3, time_down=True, scale=2.5, outfile=save_path7)
-    ax3.set_ylim(1000,0)
+    ax3.set_ylim(1500,0)
     ax3.set_ylabel('Time (s)', fontsize=10)
     ax3.set_xlabel("Epicentral Distance (Km)", fontsize=10)
-    plt.text(0.02, 1.04, '(b)',transform=plt.gca().transAxes, fontsize=10, va='top', ha='left')
+    # plt.text(0.02, 1.04, '(b)',transform=plt.gca().transAxes, fontsize=10, va='top', ha='left')
     plt.tight_layout()
     plt.savefig(save_path7)
     
@@ -294,13 +294,14 @@ def save_plots_with_optimized_inversion(folder, save_path1, save_path2, save_pat
         trace = st[0]
         
         time = np.arange(0, trace.stats.npts / trace.stats.sampling_rate, trace.stats.delta)
-        trace.stats.distance = trace.stats.sac.gcarc * 110 *1000 
-        trace_offset = trace.stats.distance /1e3
+        trace.stats.distance = trace.stats.sac.gcarc * 110 
+        # trace.stats.distance = trace.stats.sac.gcarc * 110 *1000 
+        # trace_offset = trace.stats.distance /1e3
         all_st_3 += trace 
         
     all_st_3.plot(type='section', fig=fig2, time_down=True, scale=2.5, outfile=save_path4)
     ax2 = fig2.axes[0]
-    ax2.set_ylim(1000, 0)
+    ax2.set_ylim(1500, 0)
     ax2.set_xlabel("Epicentral Distance (Km)", fontsize=10)
     ax2.set_ylabel('Time (s)', fontsize=10)
     plt.tight_layout()
@@ -335,7 +336,6 @@ def save_plots_with_optimized_inversion(folder, save_path1, save_path2, save_pat
         peak_envelopes.append(peak_envelope)
         peak_times.append(peak_time)
 
-        # store ONLY filename (important!)
         all_sac_files.append(os.path.basename(sac_file))
 
     # Convert to numpy
@@ -354,7 +354,7 @@ def save_plots_with_optimized_inversion(folder, save_path1, save_path2, save_pat
         
         reference_trace = None
         reference_trace_num = None
-
+        prev_reference_num = -1
         coherence_threshold = 0.5
         high_corr_threshold = 0.7
         neg_streak_threshold = 2   
@@ -599,26 +599,28 @@ def save_plots_with_optimized_inversion(folder, save_path1, save_path2, save_pat
         st = read(file_path)
         trace = st[0]
         time = np.arange(0, trace.stats.npts / trace.stats.sampling_rate, trace.stats.delta)
-        trace.stats.distance = trace.stats.sac.gcarc * 110 *1000 
-        trace_offset = trace.stats.distance /1e3
+        trace.stats.distance = trace.stats.sac.gcarc * 110  
+        # trace.stats.distance = trace.stats.sac.gcarc * 110 *1000 
+        # trace_offset = trace.stats.distance /1e3
         all_st_3 += trace 
         
     all_st_3.plot(type='section', fig=fig1, time_down=True, scale=2.5, outfile=save_path4)
     ax1=fig1.axes[0]
-    ax1.set_ylim(1000, 0)
+    ax1.set_ylim(1500, 0)
     ax1.set_xlabel('Epicentral Distance (Km)', fontsize=10)
     ax1.set_ylabel('Time (s)', fontsize=10)
     plt.tight_layout()
     plt.savefig(save_path4)
     plt.close(fig1)
 
-    ax0.scatter(normal_offsets, normal_corrs, marker= 'o',s=10, color='black',label='Normal') 
-    ax0.scatter(reversed_offsets, reversed_corrs, color='red',s=10, label='Reversed')   
-    ax0.set_xlabel("Epicentral Distance (Km)", fontsize=10)
-    ax0.set_ylabel("Correlation values", fontsize=10)
+    ax0.scatter(normal_offsets, normal_corrs, marker= 'o',s=6, color='black',label='Normal') 
+    ax0.scatter(reversed_offsets, reversed_corrs, color='red',s=6, label='Reversed')   
+    ax0.set_xlabel("Epicentral Distance (Km)", fontsize=6)
+    ax0.set_ylabel("Correlation values", fontsize=6)
     # ax0.set_title("Correlation vs Epicentral Distance", fontsize=10)
-    ax0.legend(fontsize=8, loc="lower left", frameon= False)
-    plt.text(0.02, 1.065, '(a)',transform=plt.gca().transAxes, fontsize=10, va='top', ha='left')
+    # ax0.legend(fontsize=8, loc="lower left", frameon= False)
+    # plt.text(0.02, 1.065, '(a)',transform=plt.gca().transAxes, fontsize=10, va='top', ha='left')
+    plt.tick_params(axis='both', which='major', labelsize=5)
     plt.tight_layout()
     plt.savefig(save_path8,format= "pdf",  dpi=300, bbox_inches='tight' )
     plt.close(fig0)
@@ -672,4 +674,5 @@ for current_path in root_path.iterdir():
                     plot_filename9= new_subfolder/ f"normal_Trace.svg"
                     save_plots_with_optimized_inversion(new_subfolder, plot_filename1, plot_filename2, scatter_filename, plot_filename3, 
                                                                 plot_filename5, plot_filename6,plot_filename7,plot_filename8, plot_filename9 )
+                    
                     
