@@ -43,7 +43,7 @@ Running the quick test
 --------------------------------------------------------------
 I have uploaded the Example data downloaded using the Getstations.py, GetStations.py and DataDownload_by_Event_Area.py for the testing of Data_Process_1.py, Data_Process_2.py and Data_Process_Final.py 
 
-1. Run the GetStations.py to download the stations file in Xml format of a particular region (I have already put the Alaska coordinates of my study area).
+1. In the Data_Process_1.py  give the path of Example_Data directory and run the code. It will generate 
 2. Run the GetEvents.py to download the events waveform for the particular time (I have used 
 
 After installing the required Python packages, run:
