@@ -67,8 +67,15 @@ In DataProcessFinal.py, specify the full path to the Example_Dataset directory i
 
 For example:
 
+# Line 18: Path to the input dataset
 root_path = r"C:\path\to\Example_Dataset"
+
+# Line 19: Path to save the final processed waveforms
 new_root_path = r"C:\path\to\Final_Processed_Data"
+
+After updating both paths, save the changes and run:
+
+python Data_Process_Final.py
 
 After updating both paths, save the changes and run:
 
