@@ -41,14 +41,58 @@ The example dataset contains a catalog and earthquake event folder which contain
 
 Running the quick test
 --------------------------------------------------------------
-I have uploaded the Example data downloaded using the Getstations.py, GetStations.py and DataDownload_by_Event_Area.py for the testing of Data_Process_1.py, Data_Process_2.py and Data_Process_Final.py 
+The Example_Data directory contains a small example dataset from Alaska. The data were downloaded using Getstations.py, GetStations.py, and DataDownload_by_Event_Area.py. The example dataset includes active seismic stations, earthquake events, and waveform data in MiniSEED (MSEED) format.
 
-1. In the Data_Process_1.py  give the path of Example_Data directory and run the code. It will generate 
-2. Run the GetEvents.py to download the events waveform for the particular time (I have used 
+This dataset is provided to test the following processing scripts:
 
-After installing the required Python packages, run:
+Data_Process_1.py
+Data_Process_2.py
+Data_Process_Final.py
 
-python run_pipeline.py --input example_data/
+Step 1: Initial Data Processing
+
+Provide the path to the Example_Data directory and run:
+
+python Data_Process_1.py
+
+The script will process the example waveform data and generate the intermediate files required for the next step.
+
+Step 2: Waveform Processing and Quality Control
+
+Provide the path to the Example_Dataset directory generated in Step 1 and run:
+
+python Data_Process_2.py
+
+The script will process the waveforms and generate the required intermediate results for the final processing step.
+
+Step 3: Final Processing
+
+Provide the path to the Example_Dataset directory located in the root folder. You will also need to provide a path to a new output directory where the final processed waveforms will be saved. 
+Run:
+
+python Data_Process_Final.py
+
+The final processed waveforms will be saved in the specified output directory. These waveforms are ready for use in subsequent surface-wave inversion and tomography studies to develop seismic Earth models and investigate crustal and upper-mantle structure and dynamics.
+
+Example_Dataset
+     │
+     ▼
+Data_Process_1.py
+     │
+     ▼
+Example_Dataset
+     │
+     ▼
+Data_Process_2.py
+     │
+     ▼
+Required intermediate results
+     │
+     ▼
+Data_Process_Final.py
+     │
+     ▼
+Final processed waveforms
 
 The example should produce the processed waveforms and quality-control results in the output/ directory.
 
