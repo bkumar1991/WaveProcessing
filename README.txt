@@ -63,13 +63,18 @@ The script will process the waveforms and generate the required intermediate res
 
 Step 3: Final Processing
 
-Provide the path to the Example_Dataset directory located in the root folder. You will also need to provide a path to a new output directory where the final processed waveforms will be saved. 
-Run:
+In DataProcessFinal.py, specify the full path to the Example_Dataset directory in the root_path variable. Then, specify a new output directory in the new_root_path variable. This directory will be used to save the final processed waveforms.
 
-python Data_Process_Final.py
+For example:
 
-The final processed waveforms will be saved in the specified output directory. These waveforms are ready for use in subsequent surface-wave inversion and tomography studies to develop seismic Earth models and investigate crustal and upper-mantle structure and dynamics.
+root_path = r"C:\path\to\Example_Dataset"
+new_root_path = r"C:\path\to\Final_Processed_Data"
 
+After updating both paths, save the changes and run:
+
+DataProcessFinal.py
+
+The final processed waveforms will be saved in the directory specified by new_root_path and are ready for subsequent surface-wave inversion and tomography studies.
 Example_Dataset
      │
      ▼
