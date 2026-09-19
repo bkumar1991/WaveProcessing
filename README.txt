@@ -31,6 +31,32 @@ Install dependencies using:
 
 pip install obspy cartopy matplotlib pandas
 
+Quick Test / Example
+------------------------------------------------------------
+A small example dataset is included in the example_data/ directory to allow users to test the preprocessing and quality-control workflow.
+
+Example data
+
+The example dataset contains a catalog and earthquake event folder which contains surface-wave waveform and stations metadata. These files are provided only for testing the software and are not intended to reproduce the complete dataset used in the study.
+
+Running the quick test
+--------------------------------------------------------------
+
+After installing the required Python packages, run:
+
+python run_pipeline.py --input example_data/
+
+The example should produce the processed waveforms and quality-control results in the output/ directory.
+
+The expected output includes:
+
+processed waveform files
+quality-control results
+summary tables
+diagnostic plots
+
+The example dataset allows users to verify that the software is correctly installed and functioning before applying it to a larger dataset.
+
 ------------------------------------------------------------
 SCRIPT 1: Station Metadata Download and Mapping
 ------------------------------------------------------------
