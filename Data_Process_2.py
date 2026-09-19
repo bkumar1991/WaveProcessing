@@ -5,7 +5,7 @@
 # clean the data before and after the window and form a new trace
 # save the new trace as sac format 
 # the file name should include event, station, and filter information
-####################################################################
+################################################################################################################################
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -194,7 +194,8 @@ for i in range(nev):
                 print("station \n", sta)
                 trflt =tr.copy()
                 trflt.filter('bandpass', freqmin = freqmin, freqmax = freqmax, zerophase = 'True')
-                ## plot figure a
+                
+                ################################### PLOT FIGURE a ##################################################################
 
                 # figa = plt.figure(figsize=(6.5, 4))
                 # tr.plot(type = 'section',fig=figa, starttime= otime, linewidth=1.0, color='k', orientation = 'horizontal')
@@ -207,7 +208,7 @@ for i in range(nev):
                 # plt.gca().xaxis.grid(False)
                 # plt.show() 
 
-                ## plot figure b
+                ########################## PLOT FIGURE b #########################################################################
 
                 # figb= plt.figure(figsize=(6.5,4))
                 # trflt.plot(type = 'section',fig=figb,  starttime = otime, linewidth=1.0, orientation = 'horizontal')
@@ -251,7 +252,7 @@ for i in range(nev):
                 tevlp = np.arange(0, len(trflt0)/samprate, 1/samprate) + twnb
 
 
-                ## plot figure c
+                ################## PLOT FIGURE 3c ######################################################################
 
                 # fig = plt.figure(figsize=(6.5, 4))
                 # plt.plot(tevlp, trflt0.data, "k", linewidth=1)
@@ -303,6 +304,9 @@ for i in range(nev):
                 network = stXfltnew_.stats.network
                 station = stXfltnew_.stats.station
                 print(network, station)
+
+                ################## PLOT FIGURE d #################################################################
+            
                 # figd = plt.figure(figsize=(6.5, 4))
                 # stXfltnew_.plot(type = 'section',fig=figd, time_down = True, scale = 2, orientation= "horizontal",color= "k", linewidth= 1.0)
                 # plt.text(0.02, 1.04, '(d)',transform=plt.gca().transAxes, fontsize=10, va='top',ha='left')
