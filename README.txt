@@ -57,8 +57,7 @@ The script will process the example waveform data and generate the intermediate 
 
 Step 2: Waveform Processing and Quality Control
 
-In line 30 of Data_Process_1.py, replace the existing path with the full path to the Example_Data directory on your computer. Save the changes and then run the script python Data_Process_1.py
-python Data_Process_2.py
+In line 85 of Data_Process_2.py, replace the existing path with the full path to the Example_Data directory on your computer. Save the changes and then run the script python Data_Process_2.py
 
 The script will process the waveforms and generate the required intermediate results for the final processing step.
 
