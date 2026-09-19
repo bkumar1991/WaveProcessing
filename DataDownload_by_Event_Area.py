@@ -1,6 +1,9 @@
 # This script is for mass-downloading data for a given rectangle area at selected events
 # The events can be pulled from data centers for the time period with selected magnitude and epicentral distance
-# For surface wave studies, the massdownload allows choosing interstation distance to avoid very close stations 
+# For surface wave studies, the massdownload allows choosing interstation distance to avoid very close stations
+# coordinates describe the region of Alaska
+################################################################################################################################
+
 import matplotlib.pyplot as plt
 import sys,os
 from obspy.clients.fdsn import Client
