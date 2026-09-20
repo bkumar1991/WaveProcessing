@@ -194,6 +194,9 @@ for i in range(nev):
                 print("station \n", sta)
                 trflt =tr.copy()
                 trflt.filter('bandpass', freqmin = freqmin, freqmax = freqmax, zerophase = 'True')
+                
+                ####### PLOTS VISUALISATION #######################################################################################
+                ####### REMOVE COMMENT TO SEE THE SURFACE WAVE PROCESSING PLOTS ###################################################
                 ## plot figure a
 
                 # figa = plt.figure(figsize=(6.5, 4))
@@ -250,9 +253,10 @@ for i in range(nev):
                 
                 tevlp = np.arange(0, len(trflt0)/samprate, 1/samprate) + twnb
 
-
+                ####### PLOTS VISUALISATION #######################################################################################
+                ####### REMOVE COMMENT TO SEE THE SURFACE WAVE PROCESSING PLOTS ###################################################
                 ## plot figure c
-
+                
                 # fig = plt.figure(figsize=(6.5, 4))
                 # plt.plot(tevlp, trflt0.data, "k", linewidth=1)
                 # plt.text(0.02, 1.04, '(c)',transform=plt.gca().transAxes, fontsize=10, va='top',
@@ -303,6 +307,11 @@ for i in range(nev):
                 network = stXfltnew_.stats.network
                 station = stXfltnew_.stats.station
                 print(network, station)
+
+
+                ####### PLOTS VISUALISATION #######################################################################################
+                ####### REMOVE COMMENT TO SEE THE SURFACE WAVE PROCESSING PLOTS ###################################################
+                ## plot figure d ##################################################################################################
                 # figd = plt.figure(figsize=(6.5, 4))
                 # stXfltnew_.plot(type = 'section',fig=figd, time_down = True, scale = 2, orientation= "horizontal",color= "k", linewidth= 1.0)
                 # plt.text(0.02, 1.04, '(d)',transform=plt.gca().transAxes, fontsize=10, va='top',ha='left')
