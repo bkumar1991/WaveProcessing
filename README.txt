@@ -216,7 +216,7 @@ https://docs.obspy.org/packages/autogen/obspy.clients.fdsn.mass_downloader.html
 
 Time Window:
 -----------
-2017-08-01 to 2018-12-31
+2017-01-01 to 2018-01-10
 
 Reference Station:
 ------------------
