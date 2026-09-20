@@ -128,8 +128,8 @@ This script downloads broadband seismic station metadata from the IRIS FDSN web 
 Processing Steps:
 -----------------
 1. Queries IRIS FDSN station service for LH? channel data
-2. Time window: 2017-01-01 to 2018-01-10
-3. Spatial coverage:
+2. Time window: 2017-01-01 to 2018-01-10 (Example Data)
+3. Spatial coverage: (Alaska region)
       Latitude : 56°N to 72°N
       Longitude: 170°W to 132°W
 4. Extracts station metadata (network, station, latitude, longitude)
@@ -162,8 +162,8 @@ This script retrieves seismic events from the IRIS FDSN event catalog and filter
 
 Processing Steps:
 -----------------
-1. Queries IRIS event catalog for magnitude ≥ 6.0
-2. Time window: 2017-01-01 to 2018-01-10
+1. Queries IRIS event catalog for magnitude ≥ 6.0 (user defined)
+2. Time window: 2017-01-01 to 2018-01-10 (Example Data)
 3. Defines reference station location:
       Latitude : 64.0°N
       Longitude: 152.0°W
