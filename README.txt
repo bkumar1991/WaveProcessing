@@ -163,7 +163,7 @@ This script retrieves seismic events from the IRIS FDSN event catalog and filter
 Processing Steps:
 -----------------
 1. Queries IRIS event catalog for magnitude ≥ 6.0
-2. Time window: 2017-08-01 to 2018-12-31
+2. Time window: 2017-01-01 to 2018-01-10
 3. Defines reference station location:
       Latitude : 64.0°N
       Longitude: 152.0°W
@@ -177,10 +177,10 @@ Processing Steps:
 
 Outputs:
 --------
-AE2017-18.xml
+Test_Data.xml
     Filtered event catalog in QuakeML format
 
-AE2017-18.txt
+Test_Data.txt
     Filtered event catalog in ZMAP format
 
 Global event distribution figure
