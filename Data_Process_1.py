@@ -27,7 +27,7 @@ import shutil # shutil.rmtree('path') to remove all files in the directory
 import glob #(find file names with matching chacracters)
 from obspy.geodetics.base import gps2dist_azimuth, kilometer2degrees
 
-yeardata = "./Testing_Folder/"
+yeardata = "./Example_Data/"
 catalog = 'catalog-1'
 CatFile = pd.read_csv(yeardata + catalog + '.csv')
 #print(CatFile.columns)
