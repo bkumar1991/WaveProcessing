@@ -128,7 +128,7 @@ This script downloads broadband seismic station metadata from the IRIS FDSN web 
 Processing Steps:
 -----------------
 1. Queries IRIS FDSN station service for LH? channel data
-2. Time window: 2017-08-01 to 2018-12-31
+2. Time window: 2017-01-01 to 2018-01-10
 3. Spatial coverage:
       Latitude : 56°N to 72°N
       Longitude: 170°W to 132°W
@@ -139,11 +139,11 @@ Processing Steps:
 
 Outputs:
 --------
-AEStations.txt
+Test_Stations.txt
     Station list containing:
     network code, station code, longitude, latitude
 
-AESta.xml
+Test_Station.xml
     Station metadata in STATIONXML format
 
 Station distribution figure (Alaska region)
