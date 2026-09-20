@@ -82,7 +82,7 @@ Lvel = [ 4.49]
 
 ## working direcroty
 #fdir = "./python codes"
-yeardata = "./Testing_Folder/"
+yeardata = "./Example_Data/"
 catalog = 'catalog-1'
 CatFile = pd.read_csv(yeardata + catalog + '.csv')
 #print(CatFile.columns)
