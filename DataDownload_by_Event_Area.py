@@ -4,7 +4,7 @@
 import matplotlib.pyplot as plt
 import sys,os
 from obspy.clients.fdsn import Client
-clientfdsn = Client("IRIS")
+clientfdsn = Client("IRIS")                     # IRIS has been changed to EarthScope now so if it doesnot work change to EarthScope 
 from obspy import UTCDateTime
 from obspy import read
 from obspy.core.event import Catalog, read_events
