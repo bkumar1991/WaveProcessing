@@ -15,8 +15,8 @@ from scipy.optimize import minimize
 # from sklearn.preprocessing import StandardScaler
 # from collections import deque
 import obspy
-root_path = Path('D:/python codes/Testing_Folder')
-new_root_path = Path('D:/python codes/TP_1') 
+root_path = Path('D:/python codes/Example_Data')
+new_root_path = Path('D:/python codes/Example_Data_Processed')            # output path to save the final processed waveforms
 
 
 def calculate_envelope_peak(trace):
