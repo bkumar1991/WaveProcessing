@@ -1,9 +1,6 @@
 import numpy as np
 from numpy.linalg import inv
-# from scipy.optimize import minimize
-# from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
-#from scipy.signal import savgol_filter
 from pathlib import Path
 import os 
 import shutil
@@ -12,8 +9,6 @@ from obspy import read, Stream
 from scipy.signal import hilbert
 import numpy as np
 from scipy.optimize import minimize
-# from sklearn.preprocessing import StandardScaler
-# from collections import deque
 import obspy
 root_path = Path('D:/python codes/Example_Data')
 new_root_path = Path('D:/python codes/Example_Data_Processed')            # output path to save the final processed waveforms
